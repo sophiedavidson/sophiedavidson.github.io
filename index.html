@@ -1,0 +1,59 @@
+<html>
+    
+    <style>
+        .head {background-color:white;padding:5px 5px;color:white;}
+        .flex {display:flex;min-height:300px;}
+        .side {background-color:white;color:black;padding:10px;flex-grow:0;}
+        .main {padding:10px;flex-grow:0;}
+        .foot {background-color:white;padding:10px 20px;color:black;}
+      </style>
+    <font face = "Trebuchet MS">
+        <title>Sophie Davidson</title>
+        <header class = "head"><div class = "flex">
+            <main class = "main">
+            <img src = "portfolio.jpg" alt="Sophie Davidson" width = "250" height = "250">
+            </main>
+            <aside class = "side">
+                <br>
+                <h1>Sophie Davidson</h1>
+                <h4>Electronic Engineering Student and Technology Assistant</p>
+                <a href = "mailto:a1825787@student.adelaide.edu.au"><img src = "email.png" alt = "email me" width="40" height ="40"></a>
+                <span><a href = "https://www.linkedin.com/in/sophiedavidsonengineering"><img src = "linkedin.png" width="40" height="40"></a></span>
+                <span><a href = "https://github.com/sophiedavidson"><img src ="github (1).png" width="40" height="40"></a></span>
+                <span><a href = "tel:+0424816283"><img src ="telephone.png" height="40" width="40"></a></span>
+                <p>Mobile: +0424816283</p>
+            </aside>
+        </div>
+        </header>
+        <hr>
+        <h2>Experience:</h2>
+        <h3><a href ="https://www.officeworks.com.au">Officeworks</a> Keswick</h3>
+        <h3>Contact Me:</h3>
+        <form id="form1">
+            First Name: <input type= "text" name = "fname">
+            Last Name : <input type = "text" name = "lname">
+            <br><br>
+            Message   :<textarea></textarea>
+        </form>
+        <button onclick = "getFormData()" >Submit</button>
+
+        <script>
+            function getFormData(){
+                var form = document.getElementById("form1");
+                var firstName = form.elements[0].value;
+                var lastName = form.elements[1].value;
+                document.getElementById("name").innerHTML=firstName;
+           
+                var v = document.getElementById("successMessage");
+                v.style.visibility = "visible";
+             }
+        </script>
+    
+        <style>
+        .success{background:#d9f4f5;padding:20px; font-style:italic; }
+        </style>
+        <div class = "success" id = "successMessage" style="visibility:hidden" >Thank you <span id = "name"></span> for registering your interest! </p>
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    
+    </font>
+</html>
