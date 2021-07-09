@@ -3,19 +3,47 @@
     <style>
         .head {background-color:white;padding:5px 5px;color:white;}
         .flex {display:flex;min-height:300px;}
-        .side {background-color:white;color:black;padding:10px;flex-grow:0;}
+        .side {background-color:white;color:black;padding:20px;flex-grow:0;border-left: 10px dashed lightgray;padding-left: 30px;flex-shrink: 0;}
         .main {padding:10px;flex-grow:0;}
         .foot {background-color:white;padding:10px 20px;color:black;}
+        .column{background-color: white;padding: 0;color: black;padding-right: 30;padding-top: 0; max-width: 750;padding-left: 30px;}
+        .sticky{position:fixed;top:0;width: 100%;}
+        #navbar {
+        overflow: hidden;
+        background-color: #333;
+        }
+
+        #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+        #navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+
+        #navbar a.active {
+        background-color: #04AA6D;
+        color: white;
+        }
+        .sticky + .content {
+        padding-top: 60px;}
       </style>
     <font face = "Helvetica">
         <title>Sophie Davidson</title>
-        <header class = "head"><div class = "flex">
+        <section id = "PersonalCard">
+        <header class = "head"><div class = "flex" >
             <main class = "main">
             <img src = "portfolio.jpg" alt="Sophie Davidson" width = "250" height = "250">
             </main>
             <aside class = "side">
                 <br>
-                <h1>Sophie Davidson</h1>
+                <h2>Sophie Davidson</h2>
                 <h4>Electronic Engineering Student and Technology Assistant</p>
                 <a href = "mailto:a1825787@student.adelaide.edu.au"><img src = "email.png" alt = "email me" width="40" height ="40"></a>
                 <span><a href = "https://www.linkedin.com/in/sophiedavidsonengineering"><img src = "linkedin.png" width="40" height="40"></a></span>
@@ -25,9 +53,127 @@
             </aside>
         </div>
         </header>
+        </section>
         <hr>
+        <div id="navbar">
+            <a class = "active" href = "#PersonalCard">Personal Card</a>
+            <a href = "#Education">Education</a>
+            <a href = "#Experience">Experience</a>
+            <a href = "#Leadership">Leadership</a>
+            <a href = "#Skills">Skills</a>    
+            </div>
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+            </script>
+        <section id = "Education">
+            <br> <h2>Education:</h2>
+        <div class = "flex">
+            <main class = "column">
+                <h3>The University of Adelaide, Faculty of Engineering, Mathematical and Computer Sciences</h3>
+                <p><ul>
+                    <li> Bachelor of Engineering (Electrical and Electronic) (Honours) with Bachelor of Mathematical and Computer Sciences. </li>
+                    <br>
+                </ul></p>
+                <br>
+                <h3>Walford Anglican School For Girls, International Baccalaureate Diploma Program</h3>
+                <p><ul>
+                    <li>2020 International Baccalaureate Joint Dux. </li>
+                    <br>
+                    <li>ATAR: 98.8 (99.95 selection rank). </li>
+                    <br>
+                    <li>Year 12 Subjects: Physics HL (merit), Mathematics HL,  Geography HL (merit), French SL (merit), Computer Science SL (merit), English Literature SL.  </li>
+                    <br>
+                </ul></p>
+            </main>
+            <aside class = "side"> 2021 - 2025
+                <br><br><br><br><br><br><br><br><br>
+                2007 - 2020
+            </aside>
+        </div>
+    </section>
+    <section id = "Experience">
         <h2>Experience:</h2>
-        <h3>Officeworks Keswick</h3><span><body>Technology Assistant (2018 - Current)</body></span>
+        <div class = "flex">
+            <main class = "column">
+                <h3>Officeworks Keswick - Technology Assistant</h3>
+                <p><ul>
+                    <li>Identify customer needs, then <b>provide recommendations</b> and <b>explain technology solutions</b> to customers with a variety of different technological abilities and understanding. </li>
+                    <br>
+                    <li><b>Build customer relationships</b>, and assist business customers with large scale technology solutions. </li>
+                    <br>
+                    <li>Assist with point of sale, print & copy, and stock replenishment departments as needed. </li>
+                    <br>
+                    <li>Customer feedback, 2021 : “I hate dealing with technology and she definitely reduced my stress levels. She is a credit to your organisation.</li>
+                </ul></p>
+                <br> 
+                <h3>Private Tutoring </h3>
+                <p><ul>
+                    <li>Develop and <b>tailor lessons to suit the students ability and learning style.</b> </li>
+                    <br>
+                    <li>-	Work alongside parents to create learning plans, helping students to succeed in their schoolwork or extend their knowledge. </li>
+                    <br>
+                </ul></p>
+            </main>
+            <aside class = "side"> 2018 - 2020
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 2020 - 2021
+            </aside>
+        </div>
+    </section>
+    <section id = "Leadership">
+        <h2>Leadership:</h2>
+        <div class = "flex">
+            <main class = "column">
+                <h3>School Vice Captain </h3>
+                <p><ul>
+                    <li>Engaged with the student body in order to promote cohesion, school spirit, community, promoting issues of importance within the school. </li>
+                    <br>
+                    <li>Organised  several large scale fundraising events</li>
+                    <br>
+                    <li>Planned and executed  events such as the year 12 breakfast, and created  new initiatives such as the year 6-12 leadership workshop, “Welcome Back Week” which aimed to improve school community post COVID lockdown, and the lockdown challenges.</li> 
+                    <br>
+                    <li>Liaised with members of staff, and worked with a diverse range of students to accurately portray their needs. </li>
+                </ul></p>
+                <h3>Mentor - Alliance of Girl’s Schools Australasia Student Leadership Conference </h3>
+                <p><ul>
+                    <li>Worked with a small group of student leaders in order to develop their leadership capabilities, encouraging them to be vulnerable and courageous in order to make a difference.</li>
+                    <br> 
+                    <li>Organised and planned  group activities, and the faccillitated important discussions within the group over the course of the 4 day conference.</li> 
+                    <br>
+                </ul></p>
+            </main>
+            <aside class = "side"> 2018 - 2020
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>2021
+
+            </aside>
+        </div>
+    </section>
+    <section id = "Skills">
+        <h2>Skills:</h2>
+        <div class = "flex">
+            <main class = "column">
+                <h3>Officeworks Keswick - Technology Assistant</h3>
+                <p><ul>
+                    <li>write this! </li>
+                    <br>
+                </ul></p>
+            </main>
+            <aside class = "side"> 2018 - 2020
+            </aside>
+        </div>
+    </section>
+    
+    <hr>
         <h3>Contact Me:</h3>
         <form id="form1">
             First Name: <input type= "text" name = "fname">
@@ -52,8 +198,9 @@
         <style>
         .success{background:#d9f4f5;padding:20px; font-style:italic; }
         </style>
+
         <div class = "success" id = "successMessage" style="visibility:hidden" >Thank you <span id = "name"></span> for registering your interest! </p>
         <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    
+     
     </font>
 </html>
