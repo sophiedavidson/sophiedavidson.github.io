@@ -5,9 +5,10 @@
         .flex {display:flex;min-height:300px;}
         .side {background-color:white;color:black;padding:20px;flex-grow:0;border-left: 10px dashed lightgray;padding-left: 30px;flex-shrink: 0;}
         .main {padding:10px;flex-grow:0;}
-        .foot {background-color:white;padding:10px 20px;color:black;}
+        .greenSection {background-color:#04AA6D;padding:10px 20px;color:white;}
         .column{background-color: white;padding: 0;color: black;padding-right: 30;padding-top: 0; max-width: 750;padding-left: 30px;}
         .sticky{position:fixed;top:0;width: 100%;}
+    
         #navbar {
         overflow: hidden;
         background-color: #333;
@@ -56,12 +57,21 @@
         </section>
         <hr>
         <div id="navbar">
-            <a class = "active" href = "#PersonalCard">Personal Card</a>
+            <a  class = "active"  href = "#PersonalCard">Personal Card</a>
             <a href = "#Education">Education</a>
             <a href = "#Experience">Experience</a>
             <a href = "#Leadership">Leadership</a>
             <a href = "#Skills">Skills</a>    
-            </div>
+        </div>
+        <script>
+                $(function(){
+                    $('a').each(function(){
+                        if ($(this).prop('href') == window.location.href) {
+                            $(this).addClass('active'); $(this).parents('li').addClass('active');
+                        }
+                    });
+                });
+        </script>
         <script>
             window.onscroll = function() {myFunction()};
             
@@ -76,8 +86,9 @@
               }
             }
             </script>
-        <section id = "Education">
+        <section id = "Education" class = "greenSection">
             <br> <h2>Education:</h2>
+        </section>
         <div class = "flex">
             <main class = "column">
                 <h3>The University of Adelaide, Faculty of Engineering, Mathematical and Computer Sciences</h3>
@@ -101,9 +112,10 @@
                 2007 - 2020
             </aside>
         </div>
-    </section>
-    <section id = "Experience">
+ 
+    <section id = "Experience" class = "greenSection">
         <h2>Experience:</h2>
+    </section>
         <div class = "flex">
             <main class = "column">
                 <h3>Officeworks Keswick - Technology Assistant</h3>
@@ -129,9 +141,9 @@
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 2020 - 2021
             </aside>
         </div>
-    </section>
-    <section id = "Leadership">
+    <section id = "Leadership"class = "greenSection">
         <h2>Leadership:</h2>
+    </section>
         <div class = "flex">
             <main class = "column">
                 <h3>School Vice Captain </h3>
@@ -148,7 +160,7 @@
                 <p><ul>
                     <li>Worked with a small group of student leaders in order to develop their leadership capabilities, encouraging them to be vulnerable and courageous in order to make a difference.</li>
                     <br> 
-                    <li>Organised and planned  group activities, and the faccillitated important discussions within the group over the course of the 4 day conference.</li> 
+                    <li>Organised and planned  group activities, and the facillitated important discussions within the group over the course of the 4 day conference.</li> 
                     <br>
                 </ul></p>
             </main>
@@ -157,50 +169,41 @@
 
             </aside>
         </div>
-    </section>
-    <section id = "Skills">
+    <section id = "Skills" class = "greenSection">
         <h2>Skills:</h2>
+    </section>
         <div class = "flex">
             <main class = "column">
-                <h3>Officeworks Keswick - Technology Assistant</h3>
                 <p><ul>
-                    <li>write this! </li>
+                    <li> Developing and programming in the following frameworks:
+                        <br> <br> 
+                        <span><a href ="https://www.python.org/"  ><img src ="python.png" height="60" width="60" alt = "Python"></a></span></a>
+                        <span><a href = "https://www.oracle.com/java/"><img src ="java.png" height="60" width="60" alt = "Java"></a></span></a>
+                        <span><a href = "https://www.javascript.com/"><img src ="javascript.png" height="60" width="60"alt = "JavaScript"></a></span></a>
+                        <span><a href = "https://www.apple.com/au/swift/"><img src ="swift.png" height="60" width="60" alt = "Swift"></a></span></a>
+                        <span><a href = "https://en.wikipedia.org/wiki/C_(programming_language)"><img src ="c.png" height="60" width="60" alt = "C"></a></span></a>
+                        <span><a href ="https://www.arduino.cc/" ><img src ="motherboard.png" height="60" width="60"alt = "Arduino"></a></span></a>
+                        <span><a href ="https://www.raspberrypi.org/" ><img src ="raspberry.png" height="60" width="60"alt = "Raspberry Pi"></a></span></a>
+                    </li>
+                    <br>
+                    <li>Leadership, team building and public speaking</li>
+                    <br>
+                    <li>Familiarity with microsoft office suite, and other common software applications </li>
+                    <br>
+                    <li>Basic skills using the Adobe Suite (Including PhotoShop, Illustrator and Premiere Pro)</li>
+                    <br>
+                    <li>French <a href = "http://www.delfdalf.fr/delf-b2.html">DELF B2 Certificate</a>, ability to communicate and discuss a range of topics in various contexts with a degree of fluency (B2 is the level typically required to persue tertiary studies in a French institution. </li>
                     <br>
                 </ul></p>
             </main>
             <aside class = "side"> 2018 - 2020
             </aside>
         </div>
-    </section>
     
-    <hr>
-        <h3>Contact Me:</h3>
-        <form id="form1">
-            First Name: <input type= "text" name = "fname">
-            Last Name : <input type = "text" name = "lname">
-            <br><br>
-            Message   :<textarea></textarea>
-        </form>
-        <button onclick = "getFormData()" >Submit</button>
+   <hr> 
 
-        <script>
-            function getFormData(){
-                var form = document.getElementById("form1");
-                var firstName = form.elements[0].value;
-                var lastName = form.elements[1].value;
-                document.getElementById("name").innerHTML=firstName;
-           
-                var v = document.getElementById("successMessage");
-                v.style.visibility = "visible";
-             }
-        </script>
-    
-        <style>
-        .success{background:#d9f4f5;padding:20px; font-style:italic; }
-        </style>
-
-        <div class = "success" id = "successMessage" style="visibility:hidden" >Thank you <span id = "name"></span> for registering your interest! </p>
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-     
+    <div class = "greenSection">
+        <p>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </p>
     </font>
 </html>
